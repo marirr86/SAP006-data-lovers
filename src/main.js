@@ -9,13 +9,13 @@ const characters = document.getElementById("charactersButton");
 
 
 let staticCards = "";
-const btn = document.getElementById("btn");
-const btnClear = document.getElementById("btn-clearFilters");
-const btnSort = document.getElementById("sort-btn");
+/*const btn = document.getElementById("btn"); */
+const btnClear = document.getElementById("clearButton");
+const btnSort = document.getElementById("sortButton");
 const searchInput = document.getElementById("search");
-const cards = document.querySelector(".cards");
-const statusFilter = document.getElementById("status-filter");
-const genderFilter = document.getElementById("gender-filter");
+const cards = document.querySelector("cards");
+const statusFilter = document.getElementById("statusFilter");
+const genderFilter = document.getElementById("genderFilter");
 
 const printTotalCharacters = document.getElementById("totalCharacters");
 const printGenderAverage = document.getElementById("genderAverage");
