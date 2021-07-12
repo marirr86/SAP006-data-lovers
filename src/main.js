@@ -1,50 +1,79 @@
-import { computeStats, filterData, sortData, searchName } from "./data.js";
+//import { computeStats, filterData, sortData, searchName } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
 
-const home = document.getElementById("homeButton");
+const dataBase = data.results;
+
+/*const home = document.getElementById("homeButton");
 const seasons = document.getElementById("seasonsButton");
 const episodes = document.getElementById("episodesButton");
 const characters = document.getElementById("charactersButton");
 
 
-let staticCards = "";
-/*const btn = document.getElementById("btn"); */
+const btn = document.getElementById("btn"); 
 const btnClear = document.getElementById("clearButton");
 const btnSort = document.getElementById("sortButton");
-const searchInput = document.getElementById("search");
 const cards = document.querySelector("cards");
 const statusFilter = document.getElementById("statusFilter");
 const genderFilter = document.getElementById("genderFilter");
 
 const printTotalCharacters = document.getElementById("totalCharacters");
-const printGenderAverage = document.getElementById("genderAverage");
+const printGenderAverage = document.getElementById("genderAverage"); */
 
-printCardsGeneric(data.results);
+showCards(data.results);
 
-function printCardsGeneric (filterChosen) {
-  staticCards = filterChosen.map(({ name, status, gender, image, episode }) =>
-   `<div class="cards_container">
-         <div class="character_img">
-           <img src="${image}">
-         </div>
-          <div class="character_info">
-          <span id="character_name">
-            <h3>${name}</h3>
-           </span>
-           <span id="character_status">${status} - ${gender}</span>
-           <span id="episodes">Episodes</span>
-             <p>${episode.map((i) => i.replaceAll(/[^0-9]/g, ' '))}</p>
+const const__container = document.getElementById("cardContainer") 
+
+function showCards(filterData) {
+  const dataFrame = `
+  <div class="container__cards__flex"> 
+    <div class="card__normal"> 
+
+        <figure> <img class="card__figure" src="${filterData.image}">
+        </figure>
+
+        <div class="card__normal__texto">
+
+          <h3 class="characterName"> Name: ${filterData.name} </h3>
+
+          <div class="info">
+            <div class="left__info">
+              <p> Status: ${filterData.status}</p>
+              <p> Gender: ${filterData.gender}</p>
+              <p> Species: ${filterData.species}</p>
+            </div>
+
+          <div class="right__info">
+            <p> Species: ${filterData.species}</p>
+            <p> Species: ${filterData.species}</p>
+            <p> Species: ${filterData.species}</p>
           </div>
-      </div>`).join("");
 
- cards.innerHTML = "";     
- cards.innerHTML += staticCards; 
+          </div>
+
+        </div>
+    </div> 
+  </div> 
+  `
+return dataFrame 
 }
+  
+let allCards=""
+
+for (let index = 0; index < dataBase.length; index++) {
+  const filterData = dataBase[index];
+  allCards += showCards(filterData)
+  
+}
+
+const__container.innerHTML = allCards
+
+ 
+
 
 //Cálculos estatísticos:
 
-const totalCharacters = computeStats.characters(data.results);
+/*const totalCharacters = computeStats.characters(data.results);
 
 printTotalCharacters.innerHTML = `<p class="totalCharacter">O total de personagens da série é:</p>
                                   <p class="numberOfCharacters">${totalCharacters}</p>`
@@ -117,4 +146,4 @@ export const anotherExample = () => {
 };
 
 export const dataRM = {
-}
+} */
