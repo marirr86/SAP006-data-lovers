@@ -124,7 +124,9 @@ body {
 
 main {
   background-color: #dcfab2;
+  text-align: center;
 }
+
 main .container__main {
   width: 100%;
   max-width: 1150px;
@@ -132,11 +134,13 @@ main .container__main {
 }
 
 div {}
-div .container .container__nav{
-    background-color: black;
-    align-items: center;
-    padding: 10px 0 10px 0;
+
+div .container .container__nav {
+  background-color: black;
+  align-items: center;
+  padding: 10px 0 10px 0;
 }
+
 div .buttonsBar {
   padding: 2rem 5rem 1rem 5rem;
   display: flex;
@@ -148,13 +152,15 @@ div .buttonsBar {
   max-width: 100%;
 }
 
-nav .nav__buttonsBar, .filterBar__buttonsBar{ 
-  text-align: center; 
+nav .nav__buttonsBar,
+.filterBar__buttonsBar {
+  text-align: center;
   align-items: center;
   padding: 10px 0 10px 0;
 
-  }
-nav .nav__buttonsBar__item  {
+}
+
+nav .nav__buttonsBar__item {
   border: 1px solid #97CE4C;
   padding: 2px 2px 2px 2px;
   border-radius: 99px;
@@ -165,25 +171,37 @@ nav .nav__buttonsBar__item  {
   width: 200px;
   max-height: 25px;
   display: inline-block;
-  text-align: center;  
+  text-align: center;
 }
-#topBar{}
+
+#topBar {}
 
 header {
   display: block;
   text-align: center;
+  background-image: url("fotofundouniverso3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  text-align: center;
+  min-width: 50%;
+  max-width: 80%;
   padding: 5em 5em 5em 5em;
   font-size: 2em;
 }
+
 h1 {
-  text-align: center;
-  min-height: 50px;
-  max-height: 60px;
-  min-width: 34px;
-  max-width: 850px;
+  font-size: 70px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
 }
 
-div .container__filterBar{}
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+div .container__filterBar {}
 
 div .filterBar {
   padding: 2rem 5rem 2rem 5rem;
@@ -195,8 +213,9 @@ div .filterBar {
   height: 33px;
   max-width: 100%;
   /*background-color: black;*/
-  color:#ffffff;
+  color: #ffffff;
 }
+
 select {
   padding: 2rem 5rem 5rem 5rem;
   border-radius: 99px;
@@ -213,12 +232,16 @@ select {
   background-color: white;
   color: black; 
 }*/
-select .filterBar__item .select__alphabet{}
-select .filterBar__item .select__status{}
-select .filterBar__item .select__gender{}
+select .filterBar__item .select__alphabet {}
 
-div .filterBar__buttonsBar{}
-.filterBar__buttonsBar{}
+select .filterBar__item .select__status {}
+
+select .filterBar__item .select__gender {}
+
+div .filterBar__buttonsBar {}
+
+.filterBar__buttonsBar {}
+
 .filterBar__buttonsBar__item {
   border: 1px solid #97CE4C;
   padding: 2px 2px 2px 2px;
@@ -231,41 +254,35 @@ div .filterBar__buttonsBar{}
   width: 100px;
   max-height: 25px;
   display: inline-block;
-  text-align: right; 
+  text-align: right;
 }
-.filterBar__buttonsBar__item a{}
 
-.container__cards{}
+.filterBar__buttonsBar__item a {}
 
-footer{
+.container__cards {}
+
+footer {
   padding: 2rem 5rem 1rem 5rem;
   background-color: #97CE4C;
 }
-.socialMedia{}
-.socialMedia__list{
+
+.socialMedia {}
+
+.socialMedia__list {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.socialMedia__list__item{
+
+.socialMedia__list__item {
   display: block;
   margin: 0 5px;
 
 }
-.socialMedia__list__item a{}
+
+.socialMedia__list__item a {}
+
 .socialMedia__list__item img {
   width: 100%;
   max-width: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-

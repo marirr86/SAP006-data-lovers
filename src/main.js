@@ -2,14 +2,10 @@ import { computeStats, filterData, sortData, searchName } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
 
-
-const homeButton = document.getElementById("homeButton");
-console.log = (homeButton)
-
+const home = document.getElementById("homeButton");
 const seasons = document.getElementById("seasonsButton");
 const episodes = document.getElementById("episodesButton");
 const characters = document.getElementById("charactersButton");
-
 
 
 let staticCards = "";
@@ -71,7 +67,6 @@ printGenderAverage.innerHTML = `<p class="genderAverage">Média de gêneros:</p>
                                 <p class="genderAverage">Sem gênero:
                                   <span>${genderlessAverage}</span>
                                 </p>`
-
 
 // Função filtrar:    
 
