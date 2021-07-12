@@ -1,15 +1,9 @@
-// estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
-};
-
 export const anotherExample = () => {
   return 'OMG';
 };
 
 export const dataRM = {
-  
+
   //FUNÇÃO FILTRAR
 
   filterData:
@@ -18,7 +12,7 @@ export const dataRM = {
     },
 
   //FUNÇÃO ORDENAR CRESCENTE
-  
+
   sortData:
     function (data, sortBy, sortOrder) {
       sortOrder == "crescente" ?
@@ -26,4 +20,4 @@ export const dataRM = {
         data.sort((a, b) => { return a[sortBy] > b[sortBy] ? -1 : a[sortBy] < b[sortBy] ? 1 : 0 })
     },
 
-}
+} 
