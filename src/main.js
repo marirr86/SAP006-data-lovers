@@ -1,8 +1,11 @@
-//import { computeStats, filterData, sortData, searchName } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
+import { sortData } from "./data.js";  
+
 
 const dataBase = data.results;
+
+const btnSort = document.getElementById("sortButton");
 
 /*const home = document.getElementById("homeButton");
 const seasons = document.getElementById("seasonsButton");
@@ -12,7 +15,6 @@ const characters = document.getElementById("charactersButton");
 
 const btn = document.getElementById("btn"); 
 const btnClear = document.getElementById("clearButton");
-const btnSort = document.getElementById("sortButton");
 const cards = document.querySelector("cards");
 const statusFilter = document.getElementById("statusFilter");
 const genderFilter = document.getElementById("genderFilter");
@@ -22,7 +24,9 @@ const printGenderAverage = document.getElementById("genderAverage"); */
 
 //PRINTING CARDS
 
-const const__container = document.getElementById("cardContainer");
+const container = document.getElementById("cardContainer");
+
+console.log(container)
 
 function showCards(filterData) {
   const dataFrame = `
@@ -65,7 +69,29 @@ for (let index = 0; index < dataBase.length; index++) {
   allCards += showCards(filterData);
 }
 
-const__container.inmentnerHTML = allCards;
+container.innerHTML = allCards;
+
+
+/* Função filtrar:    
+
+function filter(e) {
+  e.preventDefault();
+  const statusOptions = statusFilter.options[statusFilter.selectedIndex].value;
+  const genderOptions = genderFilter.options[genderFilter.selectedIndex].value;
+  const filterValue = filterData(data.results, statusOptions, genderOptions);
+  printCardsGeneric(filterValue);
+}
+btn.addEventListener("click", filter);*/
+
+
+//ORDERING FUNCTION:
+
+function sort(e) {
+  e.preventDefault();
+  const sortCards = sortData();
+  showCards(filterData);
+}
+btnSort.addEventListener("click", sort);
 
 
 
@@ -95,31 +121,11 @@ printGenderAverage.innerHTML = `<p class="genderAverage">Média de gêneros:</p>
                                   <span>${genderlessAverage}</span>
                                 </p>`
 
-// Função filtrar:    
-
-function filter(e) {
-  e.preventDefault();
-  const statusOptions = statusFilter.options[statusFilter.selectedIndex].value;
-  const genderOptions = genderFilter.options[genderFilter.selectedIndex].value;
-  const filterValue = filterData(data.results, statusOptions, genderOptions);
-  printCardsGeneric(filterValue);
-}
-btn.addEventListener("click", filter);
-
-
-// Função ordenar:
-
-function sort(e) {
-  e.preventDefault();
-  const sortCards = sortData(data.results);
-  printCardsGeneric(sortCards);
-}
-btnSort.addEventListener("click", sort);
 
 
 //Botão limpar:
 
-function clearFilters(e) {
+/*function clearFilters(e) {
   e.preventDefault()
   printCardsGeneric(data.results);
   statusFilter.options[statusFilter.selectedIndex = 0];
