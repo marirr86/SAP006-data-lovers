@@ -20,9 +20,9 @@ const genderFilter = document.getElementById("genderFilter");
 const printTotalCharacters = document.getElementById("totalCharacters");
 const printGenderAverage = document.getElementById("genderAverage"); */
 
-showCards(data.results);
+//PRINTING CARDS
 
-const const__container = document.getElementById("cardContainer") 
+const const__container = document.getElementById("cardContainer");
 
 function showCards(filterData) {
   const dataFrame = `
@@ -37,38 +37,36 @@ function showCards(filterData) {
           <h3 class="characterName"> Name: ${filterData.name} </h3>
 
           <div class="info">
+
             <div class="left__info">
               <p> Status: ${filterData.status}</p>
               <p> Gender: ${filterData.gender}</p>
               <p> Species: ${filterData.species}</p>
             </div>
-
-          <div class="right__info">
-            <p> Species: ${filterData.species}</p>
-            <p> Species: ${filterData.species}</p>
-            <p> Species: ${filterData.species}</p>
-          </div>
+            <div class="right__info">
+              <p> Type: ${filterData.type}</p>
+              <p> Origin: ${filterData.origin.name}</p>
+              <p> Location: ${filterData.location.name}</p>
+            </div>
 
           </div>
 
         </div>
     </div> 
   </div> 
-  `
-return dataFrame 
+  `;
+  return dataFrame;
 }
-  
-let allCards=""
+
+let allCards = "";
 
 for (let index = 0; index < dataBase.length; index++) {
   const filterData = dataBase[index];
-  allCards += showCards(filterData)
-  
+  allCards += showCards(filterData);
 }
 
-const__container.innerHTML = allCards
+const__container.inmentnerHTML = allCards;
 
- 
 
 
 //Cálculos estatísticos:
