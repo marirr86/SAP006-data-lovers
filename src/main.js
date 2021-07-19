@@ -1,11 +1,7 @@
 
 import data from "./data/rickandmorty/rickandmorty.js";
-import { sortData } from "./data.js";  
+import { getOrder, getDisorder } from "./data.js";
 
-
-const dataBase = data.results;
-
-const btnSort = document.getElementById("sortButton");
 
 /*const home = document.getElementById("homeButton");
 const seasons = document.getElementById("seasonsButton");
@@ -22,35 +18,29 @@ const genderFilter = document.getElementById("genderFilter");
 const printTotalCharacters = document.getElementById("totalCharacters");
 const printGenderAverage = document.getElementById("genderAverage"); */
 
-//PRINTING CARDS
+//PRINTING CARDS FUNTION
 
-const container = document.getElementById("cardContainer");
+/*const container = document.getElementById("cardContainer");
 
-console.log(container)
-
-function showCards(filterData) {
+function showCards(data) {
   const dataFrame = `
   <div class="container__cards__flex"> 
     <div class="card__normal"> 
 
-        <figure> <img class="card__figure" src="${filterData.image}">
+        <figure> <img class="card__figure" src="${data.image}">
         </figure>
 
         <div class="card__normal__texto">
 
-          <h3 class="characterName"> Name: ${filterData.name} </h3>
+          <h3 class="characterName"> Name: ${data.name} </h3>
 
           <div class="info">
 
             <div class="left__info">
-              <p> Status: ${filterData.status}</p>
-              <p> Gender: ${filterData.gender}</p>
-              <p> Species: ${filterData.species}</p>
-            </div>
-            <div class="right__info">
-              <p> Type: ${filterData.type}</p>
-              <p> Origin: ${filterData.origin.name}</p>
-              <p> Location: ${filterData.location.name}</p>
+              <p> Status: ${data.status}</p>
+              <p> Gender: ${data.gender}</p>
+              <p> Species: ${data.species}</p>
+              <p> Type: ${data.type}<p>
             </div>
 
           </div>
@@ -65,11 +55,66 @@ function showCards(filterData) {
 let allCards = "";
 
 for (let index = 0; index < dataBase.length; index++) {
-  const filterData = dataBase[index];
-  allCards += showCards(filterData);
+  const data = dataBase[index];
+  allCards += showCards(data);
+}
+container.innerHTML = allCards;*/
+
+//PRINTING CARDS FUNTION (2)
+
+function showCards(data) {
+
+  document.getElementById('cardContainer').innerHTML = data.map((item) => `
+  <div class="container__cards__flex"> 
+    <div class="card__normal"> 
+      <figure> <img class="card__figure" src="${item.image}">
+      </figure>
+
+      <div class="card__normal__texto">
+
+        <h3 class="characterName"> Name: ${item.name} </h3>
+      </div>
+    <div class="info">
+      <div class="left__info">
+        <ul class="list">
+          <li class="list__item">Status: ${item.status}</li>
+          <li class="list__item">Gender: ${item.gender}</li>
+          <li class="list__item">Species: ${item.species}</li>
+          <li class="list__item">Type: ${item.type}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+        
+ `).join("");
 }
 
-container.innerHTML = allCards;
+showCards(data.results);
+
+
+
+//ORDERING FUNCTION: A to Z
+
+const order = document.getElementById("fromAtoZ");
+
+function getOrderData() {
+
+  getDisorderData(getOrder(data.results));
+}
+order.addEventListener("click", () => { getOrderData() });
+
+
+//ORDERING FUNCTION: Z to A 
+
+const disorder = document.getElementById("fromZtoA");
+
+function getDisorderData() {
+
+  getDisorderData(getDisorder(data.results));
+}
+disorder.addEventListener("click", () => { getDisorderData() });
+
 
 
 /* Função filtrar:    
@@ -84,14 +129,22 @@ function filter(e) {
 btn.addEventListener("click", filter);*/
 
 
-//ORDERING FUNCTION:
 
-function sort(e) {
-  e.preventDefault();
-  const sortCards = sortData();
-  showCards(filterData);
+
+/*function getOrderData() {
+
+  showCards(getOrder(data.results));
 }
-btnSort.addEventListener("click", sort);
+order.addEventListener("click", () => { getOrderData() });*/
+
+
+
+
+
+
+
+//sortCards = document.getElementById("filter")
+//btnSort.addEventListener("click", sort);
 
 
 

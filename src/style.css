@@ -99,6 +99,21 @@ div .filterBar {
   max-width: 100%;
   background-color: black;
   color: #ffffff;
+  width: auto;
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  border-color: #97CE4C;
+  background-color: #97CE4C;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  max-height: 18px;
+  min-height: fit-content;
+  min-width: fit-content;
+  width: 30px;
 }
 
 select {
@@ -119,7 +134,6 @@ select {
   width: 100%;
 }
 
-.filterBar__buttonsBar {}
 
 .filterBar__buttonsBar__item {
   border: 1px solid #97CE4C;
@@ -136,9 +150,7 @@ select {
   text-align: center;
 }
 
-.filterBar__buttonsBar__item a {}
-
-.container__cards {
+.container__cards__flex {
   margin: 10px 20px;
   padding: 5px;
   border: solid 2px red;
@@ -148,8 +160,8 @@ select {
   justify-content: center;
 }
 
-.container__cards__flex {
-  margin: 10px;
+.card__normal {
+  margin: 10px 20px;
   padding: 5px;
   border: solid 4px #97CE4C;
   border-radius: 33px;
@@ -169,7 +181,7 @@ select {
   color: #97CE4C;
 }
 
-.left__info, .right__info {
+.left__info {
   text-align: left;
   font-size: 16px;
   font-weight: 600;
