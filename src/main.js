@@ -13,54 +13,9 @@ const btn = document.getElementById("btn");
 const btnClear = document.getElementById("clearButton");
 const cards = document.querySelector("cards");
 const statusFilter = document.getElementById("statusFilter");
-const genderFilter = document.getElementById("genderFilter");
-
-const printTotalCharacters = document.getElementById("totalCharacters");
-const printGenderAverage = document.getElementById("genderAverage"); */
+const genderFilter = document.getElementById("genderFilter");*/
 
 //PRINTING CARDS FUNTION
-
-/*const container = document.getElementById("cardContainer");
-
-function showCards(data) {
-  const dataFrame = `
-  <div class="container__cards__flex"> 
-    <div class="card__normal"> 
-
-        <figure> <img class="card__figure" src="${data.image}">
-        </figure>
-
-        <div class="card__normal__texto">
-
-          <h3 class="characterName"> Name: ${data.name} </h3>
-
-          <div class="info">
-
-            <div class="left__info">
-              <p> Status: ${data.status}</p>
-              <p> Gender: ${data.gender}</p>
-              <p> Species: ${data.species}</p>
-              <p> Type: ${data.type}<p>
-            </div>
-
-          </div>
-
-        </div>
-    </div> 
-  </div> 
-  `;
-  return dataFrame;
-}
-
-let allCards = "";
-
-for (let index = 0; index < dataBase.length; index++) {
-  const data = dataBase[index];
-  allCards += showCards(data);
-}
-container.innerHTML = allCards;*/
-
-//PRINTING CARDS FUNTION (2)
 
 function showCards(data) {
 
@@ -72,7 +27,7 @@ function showCards(data) {
 
       <div class="card__normal__texto">
 
-        <h3 class="characterName"> Name: ${item.name} </h3>
+        <h3 class="characterName">${item.name}</h3>
       </div>
     <div class="info">
       <div class="left__info">
@@ -80,7 +35,8 @@ function showCards(data) {
           <li class="list__item">Status: ${item.status}</li>
           <li class="list__item">Gender: ${item.gender}</li>
           <li class="list__item">Species: ${item.species}</li>
-          <li class="list__item">Type: ${item.type}</li>
+          <li class="list__item">Appears in: ${item.episode.length} episodes</li>
+          <li class="list__item">Origin: ${item.origin.name}</li>
         </ul>
       </div>
     </div>

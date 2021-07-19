@@ -18,10 +18,10 @@ main {
 }
 
 
-div .container .container__nav {
+div .container__nav {
   align-items: center;
   padding: 10px 0 10px 0;
-
+  max-width: 1025px;
 }
 
 div .buttonsBar {
@@ -33,12 +33,11 @@ div .buttonsBar {
   background-color: black;
   background-size: cover;
   height: 50px;
-  width: 100%;
+  max-width: 1025px;
 
 }
 
-nav .nav__buttonsBar,
-.filterBar__buttonsBar {
+nav .nav__buttonsBar, .filterBar__buttonsBar {
   text-align: center;
   align-items: center;
   padding: 10px 0 10px 0;
@@ -65,13 +64,15 @@ header {
   background-image: url("images/portal2.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  width: 100%;
+  background-position: bottom;
+  max-width: 1025px;
   text-align: center;
-  min-width: 50%;
-  max-width: 80%;
   padding: 3em 5em 3em 5em;
   font-size: 2em;
+}
+
+#logo {
+  text-align: center;
 }
 
 h1 {
@@ -93,7 +94,7 @@ div .filterBar {
   justify-content: space-evenly;
   flex-wrap: wrap;
   height: 25px;
-  max-width: 100%;
+  max-width: 1025px;
   background-color: black;
   color: #ffffff;
   width: auto;
@@ -131,7 +132,6 @@ select {
   width: 100%;
 }
 
-
 .filterBar__buttonsBar__item {
   border: 1px solid #97CE4C;
   padding: 2px 2px 2px 2px;
@@ -147,14 +147,21 @@ select {
   text-align: center;
 }
 
+.container__cards {
+  margin: 10px 20px;
+  padding: 2px;
+  border: solid 2px red;
+  max-width: 1025px;
+}
+
 .container__cards__flex {
   margin: 10px 20px;
-  padding: 5px;
-  border: solid 2px red;
+  padding: 2px;
+  max-width: 1025px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .card__normal {
@@ -162,12 +169,15 @@ select {
   padding: 5px;
   border: solid 4px #97CE4C;
   border-radius: 33px;
+  width: 280px;
+  height: 440px;
   background-color: black;
 }
 
 .card__figure {
   margin: inherit;
   border-radius: 33px;
+  max-width: 270px;
 }
 
 .characterName {
@@ -180,11 +190,12 @@ select {
 
 .left__info {
   text-align: left;
+  margin: 0px 25px;
   font-size: 16px;
   font-weight: 600;
-  padding: 5px 11px;
+  padding: 1px 11px;
   color: #97CE4C;
-  display: inline-block;
+  display: block;
 }
 
 footer {
@@ -201,7 +212,6 @@ footer {
 .socialMedia__list__item {
   display: block;
   margin: 0 5px;
-
 }
 
 .socialMedia__list__item img {
