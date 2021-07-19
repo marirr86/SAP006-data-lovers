@@ -1,6 +1,6 @@
 
 import data from "./data/rickandmorty/rickandmorty.js";
-import { getOrder, getDisorder } from "./data.js";
+import { toOrder } from "./data.js";
 
 
 /*const home = document.getElementById("homeButton");
@@ -100,7 +100,7 @@ const order = document.getElementById("fromAtoZ");
 
 function getOrderData() {
 
-  getDisorderData(getOrder(data.results));
+  showCards(toOrder(data.results, "A-Z"));
 }
 order.addEventListener("click", () => { getOrderData() });
 
@@ -111,7 +111,7 @@ const disorder = document.getElementById("fromZtoA");
 
 function getDisorderData() {
 
-  getDisorderData(getDisorder(data.results));
+  showCards(toOrder(data.results, "Z-A"));
 }
 disorder.addEventListener("click", () => { getDisorderData() });
 
