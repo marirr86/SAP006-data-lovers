@@ -58,7 +58,7 @@ function getOrderData() {
 
   showCards(toOrder(data.results, "A-Z"));
 }
-order.addEventListener("click", () => { getOrderData() });
+order.addEventListener("change", () => { getOrderData() });
 
 
 //ORDERING FUNCTION: Z to A 
@@ -69,7 +69,7 @@ function getDisorderData() {
 
   showCards(toOrder(data.results, "Z-A"));
 }
-disorder.addEventListener("click", () => { getDisorderData() });
+disorder.addEventListener("change", () => { getDisorderData() });
 
 
 

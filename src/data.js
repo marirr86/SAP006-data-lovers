@@ -3,10 +3,10 @@ export const toOrder = (data, order) => {
   
   let showOrder = data.sort(function(a,z){
     if(a.name < z.name) {
-      return order=="A-Z"? -1:1
+      return order==="A-Z"? -1:1;
     }
     if(a.name > z.name) {
-      return order=="A-Z"? 1:-1;
+      return order==="Z-A"? 1:-1;
     }
   })
   return showOrder

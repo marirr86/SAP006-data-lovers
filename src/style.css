@@ -64,28 +64,25 @@ header {
   background-image: url("images/portal2.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position:bottom;
+  background-position-y:bottom;
   max-width: 1025px;
-  text-align: center;
   padding: 3em 5em 3em 5em;
   font-size: 2em;
 }
 
-#logo {
+.logo {
   text-align: center;
+  max-height: 200px;
+  padding-bottom: 60px;
 }
 
-h1 {
-  font-size: 70px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: bold;
+.header__subtitle {
+  color: rgb(5, 5, 5);
+  padding-top: 30px;
 }
 
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-div .filterBar {
+.container__filterBar {
   padding: 2rem 5rem 2rem 5rem;
   display: flex;
   font-size: 24px;
@@ -130,9 +127,10 @@ select {
 
 .filterBar {
   width: 100%;
+  background-color: #000;
 }
 
-.filterBar__buttonsBar__item {
+.buttonsBar__item , .filterBar__item {
   border: 1px solid #97CE4C;
   padding: 2px 2px 2px 2px;
   border-radius: 99px;
