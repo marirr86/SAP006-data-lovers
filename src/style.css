@@ -17,29 +17,28 @@ main {
   text-align: center;
 }
 
-div {}
 
-div .container .container__nav {
+div .container__nav {
   align-items: center;
   padding: 10px 0 10px 0;
-
+  max-width: 1025px;
 }
 
 div .buttonsBar {
-  padding: 2rem 5rem 1rem 5rem;
+  padding-top: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: nowrap;
   background-color: black;
   background-size: cover;
-  height: 50px;
-  width: 100%;
+  height: 60px;
+  /*max-width: 1025px;*/
+  /*padding: 2rem 5rem 1rem 5rem;*/
 
 }
 
-nav .nav__buttonsBar,
-.filterBar__buttonsBar {
+nav .nav__buttonsBar, .filterBar__buttonsBar {
   text-align: center;
   align-items: center;
   padding: 10px 0 10px 0;
@@ -60,35 +59,39 @@ nav .nav__buttonsBar__item {
   text-align: center;
 }
 
-#topBar {}
-
 header {
   display: block;
   text-align: center;
   background-image: url("images/portal2.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  width: 100%;
-  text-align: center;
-  min-width: 50%;
-  max-width: 80%;
-  padding: 3em 5em 3em 5em;
+  background-position-y: -39em;
+  height: 440px;
+  /*max-width: 1025px;*/
+  /*padding: 3em 5em 3em 5em;*/
   font-size: 2em;
 }
 
-h1 {
-  font-size: 70px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: bold;
+
+img {
+  align-self: center;
+  margin-top: 60px;
 }
 
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.logo {
+  text-align: center;
+  max-height: 200px;
+  padding-bottom: 60px;
 }
 
-div .filterBar {
-  padding: 2rem 5rem 2rem 5rem;
+.header__subtitle {
+  color: black;
+  padding-top: 65px;
+}
+
+/*.container__filterBar {
+  /*padding: 2rem 5rem 2rem 5rem;
+  padding: 2em;
   display: flex;
   font-size: 24px;
   font-weight: 600;
@@ -96,9 +99,39 @@ div .filterBar {
   justify-content: space-evenly;
   flex-wrap: wrap;
   height: 25px;
-  max-width: 100%;
+  /*max-width: 1025px;
   background-color: black;
   color: #ffffff;
+  width: auto;
+  align-items: center;
+}*/
+
+/*button*/ .botao {
+  /*padding: 1rem 2rem;*/
+  /*padding: 1em;
+  border-radius: 99px;
+  border-color: #97CE4C;
+  background-color: #97CE4C;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  max-height: 18px;
+  text-align: center;
+  min-height: fit-content;
+  min-width: fit-content;
+  width: 60px;*/
+  border: 1px solid #97CE4C;
+  padding: 0px 2px;
+  margin: 13px;
+  border-radius: 99px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  background-color: #97CE4C;
+  width: 100px;
+  max-height: 30px;
+  display: inline-block;
+  text-align: center;
 }
 
 select {
@@ -117,11 +150,12 @@ select {
 
 .filterBar {
   width: 100%;
+  background-color: #000;
+  text-align: center;
+  height: 100px;  
 }
 
-.filterBar__buttonsBar {}
-
-.filterBar__buttonsBar__item {
+.buttonsBar__item , .filterBar__item {
   border: 1px solid #97CE4C;
   padding: 2px 2px 2px 2px;
   border-radius: 99px;
@@ -131,34 +165,42 @@ select {
   color: black;
   background-color: #97CE4C;
   width: 100px;
-  max-height: 25px;
+  max-height: 15px;
   display: inline-block;
   text-align: center;
 }
 
-.filterBar__buttonsBar__item a {}
-
 .container__cards {
   margin: 10px 20px;
-  padding: 5px;
+  padding: 2px;
   border: solid 2px red;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 1025px;
 }
 
 .container__cards__flex {
-  margin: 10px;
+  margin: 10px 20px;
+  padding: 2px;
+  max-width: 1025px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card__normal {
+  margin: 10px 20px;
   padding: 5px;
   border: solid 4px #97CE4C;
   border-radius: 33px;
+  width: 280px;
+  height: 440px;
   background-color: black;
 }
 
 .card__figure {
   margin: inherit;
   border-radius: 33px;
+  max-width: 270px;
 }
 
 .characterName {
@@ -169,21 +211,20 @@ select {
   color: #97CE4C;
 }
 
-.left__info, .right__info {
+.left__info {
   text-align: left;
+  margin: 0px 25px;
   font-size: 16px;
   font-weight: 600;
-  padding: 5px 11px;
+  padding: 1px 11px;
   color: #97CE4C;
-  display: inline-block;
+  display: block;
 }
 
 footer {
   padding: 2rem 5rem 1rem 5rem;
   background-color: #97CE4C;
 }
-
-.socialMedia {}
 
 .socialMedia__list {
   display: flex;
@@ -194,14 +235,9 @@ footer {
 .socialMedia__list__item {
   display: block;
   margin: 0 5px;
-
 }
-
-.socialMedia__list__item a {}
 
 .socialMedia__list__item img {
   width: 100%;
   max-width: 20px;
 }
-
-
