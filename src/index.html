@@ -4,18 +4,19 @@
 <head>
   <meta charset="utf-8">
   <title>Rick and Morty</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="Pg1.css"/>
+  <link rel="stylesheet" type="text/css" href="Pg2.css"/>
 </head>
 
-<body>
 
-  
+<body> 
+
     <div class="buttonsBar">
       <nav class="buttonsBar nav__buttonsBar" id="topBar">
-        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="homeButton">home</a>
-        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="seasonsButton">seasons</a>
-        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="episodesButton">episodes</a>
-        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="charactersButton">characters</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="homeButton">Home</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.imdb.com/title/tt2861424/episodes" id="seasonsButton">Seasons</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.imdb.com/title/tt2861424/episodes?year=2017"  id="episodesButton">Episodes</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.adultswim.com/streams/rick-and-morty" id="charactersButton">Watch it now!</a>
       </nav>
     </div>
 
@@ -24,67 +25,67 @@
       <h2 class="header__subtitle">Card Library</h2>
     </header>
 
-    
-
     <div class="container__filterBar">
 
       <section class="filterBar">
 
-          <button id="fromAtoZ" class="botao">A to Z</button>
-          <button id="fromZtoA" class="botao">Z to A</button>
+          <button id="fromAtoZ" class="filter-bar-item">A to Z</button>
+          <button id="fromZtoA" class="filter-bar-item">Z to A</button>
           <br>
 
-        <!--<select id="alphabeticalFilter" name="alphabeticalFilter">
-          <option class="filterBar__item alphabet" value="option">Select Option</option>
-          <option class="filterBar__item alphabet" value="aToZ">A - Z</option>
-          <option class="filterBar__item alphabet" value="zToA">Z - A</option>
-        </select>>-->
+        <select id="statusFilter" name="statusFilter" class="filter-bar-item status">
 
-        <!--filterBar__item status-->
-
-        <select id="statusFilter" name="statusFilter" class="botao">
-
-          <option class="botao" value="none" selected disabled>Select status</option>
-          <option class="botao" value="dead">Dead</option>
-          <option class="botao" value="alive">Alive</option>
-          <option class="botao" value="unknown">Unknown</option>
+          <option class="filter-bar-item status" value="none" selected disabled>&#10067; Select status</option>
+          <option class="filter-bar-item status" value="Dead">&#128128; Dead</option>
+          <option class="filter-bar-item status" value="Alive">&#128154; Alive</option>
+          <option class="filter-bar-item status" value="unknown">&#10067; Unknown</option>
 
         </select>
 
-        <!--filterBar__item gender-->
+        <select id="genderFilter" name="genderFilter" class="filter-bar-item">
 
-        <select id="genderFilter" name="genderFilter" class="botao">
-
-          <option class="botao" value="none" selected disabled>Select gender</option>
-          <option class="botao" value="female">female</option>
-          <option class="botao" value="male">male</option>
-          <option class="botao" value="genderless">genderless</option>
-          <option class="botao" value="unknown">unknown</option>
+          <option class="filter-bar-item" value="none" selected disabled>&#9893; Select gender</option>
+          <option class="filter-bar-item" value="Female">&#9792; female</option>
+          <option class="filter-bar-item" value="Male">&#9794; male</option>
+          <option class="filter-bar-item" value="Genderless">&#10060; genderless</option>
+          <option class="filter-bar-item" value="unknown">&#10067; unknown</option>
 
         </select>
-
-        <!--<nav class="filterBar__buttonsBar">-->
-          <!--<input id="filterButton" class="filterBar__buttonsBar__item" type="button" value="filter">-->
-          <input class="botao" type="button" value="clear">
-        <!--</nav>-->
+       
+          <input id="clearButton" class="filter-bar-item" type="button" value="clear">
         
       </section>
 
     </div>
 
-  <main>
-    <div class="container">
-      <div id="cardContainer" class="container__cards"></div>
-    </div>
-  </main>
-    
+  <div id="cardContainer" class="container__cards"></div>
 
+
+
+  
   <footer>
-    <nav class="socialMedia">
-      <ul class="socialMedia__list">
-        <li class="socialMedia__list__item">
-          <a href="#">
-            <img src="images/github.png" alt="github" />
+      <h4>Desenvolvido por alunas da <a href="https://laboratoria.la">Laboratória</a>.</h4>
+      <h5>Mariana Rocha e Cristina Bezerra</h5>
+    <nav class="social-media">
+      <ul class="social-media-list">
+        <li class="social-media-list-item">
+          <a href="https://github.com/crisbdev">
+            <img src="images/github.png" alt="github-cris" />
+          </a>
+        </li>
+        <li class="social-media-list-item">
+          <a href="https://github.com/marirr86/">
+            <img src="images/github.png" alt="github-mari" />
+          </a>
+        </li>
+        <li class="social-media-list-item">
+          <a href="https://www.linkedin.com/in/patriciaccb/">
+            <img src="images/linkedin.png" alt="linkedin-cris" />
+          </a>
+        </li>
+        <li class="social-media-list-item">
+          <a href="https://www.linkedin.com/in/mariana-rocha-64b77a26/">
+            <img src="images/linkedin.png" alt="linkedin-mari" />
           </a>
         </li>
       </ul>
