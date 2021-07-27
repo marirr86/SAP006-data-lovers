@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Rick and Morty</title>
+  <link rel="stylesheet" type="text/css" href="Pg1.css"/>
+  <link rel="stylesheet" type="text/css" href="Pg2.css"/>
+</head>
+
+
+<body> 
+
+    <div class="buttonsBar">
+      <nav class="buttonsBar nav__buttonsBar" id="topBar">
+        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="homeButton">Home</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.imdb.com/title/tt2861424/episodes" id="seasonsButton">Seasons</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.imdb.com/title/tt2861424/episodes?year=2017"  id="episodesButton">Episodes</a>
+        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.adultswim.com/streams/rick-and-morty" id="charactersButton">Watch it now!</a>
+      </nav>
+    </div>
+
+    <header>
+      <div id="logo"><img src="images/title.png" alt=""></div>
+      <h2 class="header__subtitle">Card Library</h2>
+    </header>
+
+    <div class="container__filterBar">
+
+      <section class="filterBar">
+
+          <button id="fromAtoZ" class="filter-bar-item">A to Z</button>
+          <button id="fromZtoA" class="filter-bar-item">Z to A</button>
+          <br>
+
+        <select id="statusFilter" name="statusFilter" class="filter-bar-item status">
+
+          <option class="filter-bar-item status" value="none" selected disabled>&#10067; Select status</option>
+          <option class="filter-bar-item status" value="Dead">&#128128; Dead</option>
+          <option class="filter-bar-item status" value="Alive">&#128154; Alive</option>
+          <option class="filter-bar-item status" value="unknown">&#10067; Unknown</option>
+
+        </select>
+
+        <select id="genderFilter" name="genderFilter" class="filter-bar-item">
+
+          <option class="filter-bar-item" value="none" selected disabled>&#9893; Select gender</option>
+          <option class="filter-bar-item" value="Female">&#9792; female</option>
+          <option class="filter-bar-item" value="Male">&#9794; male</option>
+          <option class="filter-bar-item" value="Genderless">&#10060; genderless</option>
+          <option class="filter-bar-item" value="unknown">&#10067; unknown</option>
+
+        </select>
+       
+          <input id="clearButton" class="filter-bar-item" type="button" value="clear">
+        
+      </section>
+
+    </div>
+
+  <div id="cardContainer" class="container__cards"></div>
+
+
+
+  
+  <footer>
+      <h4>Desenvolvido por alunas da <a href="https://laboratoria.la">Laboratória</a>.</h4>
+      <h5>Mariana Rocha e Cristina Bezerra</h5>
+    <nav class="social-media">
+      <ul class="social-media-list">
+        <li class="social-media-list-item">
+          <a href="https://github.com/crisbdev">
+            <img src="images/github.png" alt="github-cris" />
+          </a>
+        </li>
+        <li class="social-media-list-item">
+          <a href="https://github.com/marirr86/">
+            <img src="images/github.png" alt="github-mari" />
+          </a>
+        </li>
+        <li class="social-media-list-item">
+          <a href="https://www.linkedin.com/in/patriciaccb/">
+            <img src="images/linkedin.png" alt="linkedin-cris" />
+          </a>
+        </li>
+        <li class="social-media-list-item">
+          <a href="https://www.linkedin.com/in/mariana-rocha-64b77a26/">
+            <img src="images/linkedin.png" alt="linkedin-mari" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="main.js" type="module"></script>
+  </div>
+</body>
+
+</html>

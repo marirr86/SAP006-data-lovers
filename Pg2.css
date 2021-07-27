@@ -1,0 +1,74 @@
+
+  #cardContainer {
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    background-color: blueviolet;
+    align-content: center;
+    background-color: #E9FDCD ;
+  }
+  
+  .card__normal {
+    margin: 20px 20px;
+    padding: 5px;
+    border: solid 4px #97CE4C;
+    border-radius: 25px;
+    width: 270px;
+    height: 437px;
+    align-content: center;
+    background-color: black;
+  }
+  
+  .card__figure {
+    margin: inherit;
+    border-radius: 15px;
+    max-width: 270px;
+  }
+  
+  .characterName {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 3px 5px;
+    color: #97CE4C;
+  }
+  
+  .info {
+    text-align: left;
+    margin: 0px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 1px 11px;
+    color: #97CE4C;
+    display: block;
+  }
+  
+  footer {
+    padding: 3rem 2rem 3rem 2rem;
+    background-color: #97CE4C;
+    text-align: center;
+  }
+
+  .social-media {
+    margin: 2px;
+  }
+  
+  .social-media-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .social-media-list-item {
+    display: block;
+    margin: 20px 5px;
+  }
+  
+  .social-media-list-item img {
+    width: 100%;
+    max-width: 20px;
+  }
+
+  
