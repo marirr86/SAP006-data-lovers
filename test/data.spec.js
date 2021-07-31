@@ -1,23 +1,66 @@
-import { example, anotherExample } from '../src/data.js';
+import { ordering, getGender, getStatus, getSpecies } from '../src/data.js';
 
+const chars = [
+  {"name": "Phillip Jacobs", "status": "Alive", "species": "Human", "gender": "Male"},
+  {"name": "General Nathan", "status": "Dead", "species": "Human", "gender": "Male"},
+  {"name": "Glenn", "status": "Dead", "species": "Alien" ,"gender": "Male"},
+  {"name": "Birdperson","status": "Dead", "species": "Alien", "gender": "Male"}];
 
-describe('example', () => {
+const charsAZ = [
+  {"name": "Birdperson","status": "Dead", "species": "Alien", "gender": "Male"},
+  {"name": "General Nathan", "status": "Dead", "species": "Human", "gender": "Male"},
+  {"name": "Glenn", "status": "Dead", "species": "Alien" ,"gender": "Male"},
+  {"name": "Phillip Jacobs", "status": "Alive", "species": "Human", "gender": "Male"}];
+
+const charsZA = [
+  {"name": "Phillip Jacobs", "status": "Alive", "species": "Human", "gender": "Male"},
+  {"name": "General Nathan", "status": "Dead", "species": "Human", "gender": "Male"},
+  {"name": "Glenn", "status": "Dead", "species": "Alien" ,"gender": "Male"},
+  {"name": "Birdperson","status": "Dead", "species": "Alien", "gender": "Male"}];
+
+describe('testing "ordering" function', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof ordering).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('test if it is ordered from `A-Z`', () => {
+    expect(ordering(chars, "A-Z")).toEqual('charsAZ');
+  });
+
+  it('test if it is ordered from `Z-A`', () => {
+    expect(ordering(chars, "Z-A")).toEqual('charsZA');
   });
 });
 
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+describe('testing "getSpecies" function', () => {
+  it('its a function', () => {
+    expect(typeof getSpecies).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('should filter by status', () => {
+    expect(getSpecies(chars, "Male")).toEqual([chars[2]]);
   });
+
+});
+
+describe('testing "getStatus" function', () => {
+  it('its a function', () => {
+    expect(typeof getStatus).toBe('function');
+  });
+
+  it('should filter by status', () => {
+    expect(getStatus(chars, "Male")).toEqual([chars[1]]);
+  });
+
+});
+
+describe('testing "getGender" function', () => {
+  it('its a function', () => {
+    expect(typeof getGender).toBe('function');
+  });
+
+  it('should filter by gender', () => {
+    expect(getGender(chars, "Male")).toEqual([chars[3]]);
+  });
+
 });

@@ -1,87 +1,79 @@
 
 import data from "./data/rickandmorty/rickandmorty.js";
-import { toOrder, getStatus, getGender} from "./data.js";
+import { ordering, getSpecies, getStatus, getGender} from "./data.js";
 
 
-const order = document.getElementById("fromAtoZ");
-const disorder = document.getElementById("fromZtoA");
-const statusDOM = document.getElementById("statusFilter");
-const genderDOM = document.getElementById("genderFilter");
-const clearBtn = document.getElementById("clearButton")
-
-//PRINTING CARDS FUNTION
+const orderDOM = document.getElementById("aToZ-filter");
+const statusDOM = document.getElementById("status-filter");
+const genderDOM = document.getElementById("gender-filter");
+const speciesDOM = document.getElementById("species-filter");
+const clearBtn = document.getElementById("clear-button")
 
 function showCards(data) {
-
-  document.getElementById('cardContainer').innerHTML = data.map((item) => `
-    <div class="card__normal"> 
-      <figure> <img class="card__figure" src="${item.image}">
+  document.getElementById('card-container').innerHTML = data.map((item) => `
+    <section class="card"> 
+      <figure class="card-figure">
+      <img class="card-img" src="${item.image}">
       </figure>
-      <div class="card__normal__texto">
-        <h3 class="characterName">${item.name}</h3>
-      </div>
-      <div class="info">
+      <section class="container-name">
+        <h3 class="name">${item.name}</h3>
+      </section>
+      <section class="info">
         <ul class="list">
-          <li class="list__item">Status: ${item.status}</li>
-          <li class="list__item">Gender: ${item.gender}</li>
-          <li class="list__item">Species: ${item.species}</li>
-          <li class="list__item">Appears in: ${item.episode.length} episodes</li>
-          <li class="list__item">Origin: ${item.origin.name}</li>
+          <li class="list-item">Status: ${item.status}</li>
+          <li class="list-item">Gender: ${item.gender}</li>
+          <li class="list-item">Species: ${item.species}</li>
+          <li class="list-item">Appears in: ${item.episode.length} episodes</li>
+          <li class="list-item">Origin: ${item.origin.name}</li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </section>
         
  `).join("");
 }
 
 showCards(data.results);
 
-//ORDERING FUNCTION: A to Z
+orderDOM.addEventListener("change", (e) => {
+	const target = e.target.value;
+	const order = ordering(data.results, target);
+	showCards(order);
+});
 
-function getOrderData() {
-
-  showCards(toOrder(data.results, "A-Z"));
-}
-order.addEventListener("click", () => { getOrderData() });
-
-//ORDERING FUNCTION: Z to A 
-
-function getDisorderData() {
-
-  showCards(toOrder(data.results, "Z-A"));
-}
-disorder.addEventListener("click", () => { getDisorderData() });
-
-// FUNCTION FILTER BY STATUS:
-
-function target(option) {
-
-  let targetValue = option.target.value;
-  let result = getStatus(data.results, targetValue);
-  document.getElementById('cardContainer').innerHTML = ""
+function species(e) {
+  const target = e.target.value;
+  const result = getSpecies(data.results, target);
+  document.getElementById("card-container").innerHTML = ""
   showCards(result)
 }
 
-statusDOM.addEventListener("change", (option) => {target(option)});
+speciesDOM.addEventListener("change", (e) => {species(e)});
 
-// FUNCTION FILTER BY GENDER:
-
-function gender2(option) {
-
-  let targetValue = option.target.value;
-  let result = getGender(data.results, targetValue);
-  document.getElementById('cardContainer').innerHTML = ""
+function status(e) {
+  const target = e.target.value;
+  const result = getStatus(data.results, target);
+  document.getElementById("card-container").innerHTML = ""
   showCards(result)
 }
 
-genderDOM.addEventListener("change", (option) => {gender2(option)});
+statusDOM.addEventListener("change", (e) => {status(e)});
 
-// FUNCTION CLEAR:
+function gender(e) {
+  const target = e.target.value;
+  const result = getGender(data.results, target);
+  document.getElementById("card-container").innerHTML = ""
+  showCards(result)
+}
+
+genderDOM.addEventListener("change", (e) => {gender(e)});
 
 function clear(e) {
   e.preventDefault()
   showCards(data.results);
+  orderDOM.options[orderDOM.selectedIndex = 0];
+  speciesDOM.options[speciesDOM.selectedIndex = 0];
   statusDOM.options[statusDOM.selectedIndex = 0];
   genderDOM.options[genderDOM.selectedIndex = 0];
+  
   }
   clearBtn.addEventListener("click", clear); 

@@ -3,69 +3,98 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Rick and Morty</title>
-  <link rel="stylesheet" type="text/css" href="Pg1.css"/>
-  <link rel="stylesheet" type="text/css" href="Pg2.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" href="./images/icon.png" type="image/x-icon">
+  <title>card library</title>
 </head>
 
+<body>
 
-<body> 
-
-    <div class="buttonsBar">
-      <nav class="buttonsBar nav__buttonsBar" id="topBar">
-        <a class="nav__buttonsBar__item buttonsBar__item" href="" id="homeButton">Home</a>
-        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.imdb.com/title/tt2861424/episodes" id="seasonsButton">Seasons</a>
-        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.imdb.com/title/tt2861424/episodes?year=2017"  id="episodesButton">Episodes</a>
-        <a class="nav__buttonsBar__item buttonsBar__item" href="https://www.adultswim.com/streams/rick-and-morty" id="charactersButton">Watch it now!</a>
-      </nav>
-    </div>
-
-    <header>
-      <div id="logo"><img src="images/title.png" alt=""></div>
-      <h2 class="header__subtitle">Card Library</h2>
-    </header>
-
-    <div class="container__filterBar">
-
-      <section class="filterBar">
-
-          <button id="fromAtoZ" class="filter-bar-item">A to Z</button>
-          <button id="fromZtoA" class="filter-bar-item">Z to A</button>
-          <br>
-
-        <select id="statusFilter" name="statusFilter" class="filter-bar-item status">
-
-          <option class="filter-bar-item status" value="none" selected disabled>&#10067; Select status</option>
-          <option class="filter-bar-item status" value="Dead">&#128128; Dead</option>
-          <option class="filter-bar-item status" value="Alive">&#128154; Alive</option>
-          <option class="filter-bar-item status" value="unknown">&#10067; Unknown</option>
-
-        </select>
-
-        <select id="genderFilter" name="genderFilter" class="filter-bar-item">
-
-          <option class="filter-bar-item" value="none" selected disabled>&#9893; Select gender</option>
-          <option class="filter-bar-item" value="Female">&#9792; female</option>
-          <option class="filter-bar-item" value="Male">&#9794; male</option>
-          <option class="filter-bar-item" value="Genderless">&#10060; genderless</option>
-          <option class="filter-bar-item" value="unknown">&#10067; unknown</option>
-
-        </select>
-       
-          <input id="clearButton" class="filter-bar-item" type="button" value="clear">
-        
-      </section>
-
-    </div>
-
-  <div id="cardContainer" class="container__cards"></div>
+  <nav class="container-navbar">
+    <ul>
+      <li class="navbar-item">
+        <a href="" id="homeButton">home</a>
+      </li>
+      <li class="navbar-item">
+        <a href="https://www.imdb.com/title/tt2861424/episodes" id="seasonsButton">seasons</a>
+      </li>
+      <li class="navbar-item">
+        <a href="https://www.imdb.com/title/tt2861424/episodes?year=2017" id="episodesButton">episodes</a>
+      </li>
+      <li class="navbar-item">
+        <a href="https://www.adultswim.com/streams/rick-and-morty" id="charactersButton">watch
+          now!</a>
+      </li>
+    </ul>
+  </nav>
 
 
+  <header>
+    <img class="logo-flex" src="images/title.png" alt="rick-and-morty-logo">
 
-  
+    <h2 class="header-subtitle">card library</h2>
+  </header>
+
+  <main>
+    <section class="container-filter-bar">
+
+      <select id="aToZ-filter" class="filter-bar-item aToZ">
+
+        <option class="filter-bar-item aToZ" selected disabled>order</option>
+        <option class="filter-bar-item aToZ" value="a-z">A to Z</option>
+        <option class="filter-bar-item aToZ" value="z-a">Z to A</option>
+
+      </select>
+
+      <select id="species-filter" class="filter-bar-item species">
+
+        <option class="filter-bar-item species" selected disabled>species</option>
+        <option class="filter-bar-item species" value="Alien">alien</option>
+        <option class="filter-bar-item species" value="Animal">animal</option>
+        <option class="filter-bar-item species" value="Cronenberg">cronenberg</option>
+        <option class="filter-bar-item species" value="Disease">disease</option>
+        <option class="filter-bar-item species" value="Human">human</option>
+        <option class="filter-bar-item species" value="Humanoid">humanoid</option>
+        <option class="filter-bar-item species" value="Mytholog">mytholog</option>
+        <option class="filter-bar-item species" value="Poopybutthole">poopybutthole</option>
+        <option class="filter-bar-item species" value="Robot">robot</option>
+        <option class="filter-bar-item species" value="Vampire">vampire</option>
+        <option class="filter-bar-item species" value="unknown">unknown</option>
+
+      </select>
+      <select id="status-filter" class="filter-bar-item status">
+
+        <option class="filter-bar-item status" value="none" selected disabled>&#10067; status</option>
+        <option class="filter-bar-item status" value="Dead">&#128128; <p class="hidden">dead</p>
+        </option>
+        <option class="filter-bar-item status" value="Alive">&#128154; <p class="hidden">alive</p>
+        </option>
+        <option class="filter-bar-item status" value="unknown">&#10067; <p class="hidden">unknown</p>
+        </option>
+
+      </select>
+
+      <select id="gender-filter" class="filter-bar-item gender">
+
+        <option class="filter-bar-item gender" value="none" selected disabled>&#9893; gender</option>
+        <option class="filter-bar-item gender" value="Female">&#9792; female</option>
+        <option class="filter-bar-item gender" value="Male">&#9794; male</option>
+        <option class="filter-bar-item gender" value="Genderless">&#10060; genderless</option>
+        <option class="filter-bar-item gender" value="unknown">&#10067; unknown</option>
+
+      </select>
+
+      <input id="clear-button" class="filter-bar-item" type="button" value="clear">
+
+    </section>
+
+    <section id="card-container" class="container-cards"></section>
+  </main>
+
   <footer>
-      <h4>Desenvolvido por alunas da <a href="https://laboratoria.la">Laboratória</a>.</h4>
-      <h5>Mariana Rocha e Cristina Bezerra</h5>
+    <h4>Desenvolvido por alunas da
+      <a href="https://laboratoria.la">Laboratoria</a>.</h4>
+    <h5>Mariana Rocha e Cristina Bezerra</h5>
     <nav class="social-media">
       <ul class="social-media-list">
         <li class="social-media-list-item">

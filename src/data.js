@@ -1,26 +1,23 @@
-
-export const toOrder = (data, order) => {
-  
-  let showOrder = data.sort(function(a,z){
-    if(a.name < z.name) {
-      return order=="A-Z"? -1:1
-    }
-    if(a.name > z.name) {
-      return order=="A-Z"? 1:-1;
-    }
-  })
-  return showOrder
-  
+export const ordering = (arr, e) => {
+  const element = [...arr];
+  if (e === "a-z") {
+      return element.sort((a, b) => a.name > b.name ? 1 : -1);
+  } else if (e === "z-a") {
+      return element.sort((a, b) => a.name > b.name ? -1 : 1);
+  }
 }
 
-export const getStatus = (data, targetValue) => {
+export const getSpecies = (data, target) => {
+  return data.filter((item) => item.species === target );
+      
+  } 
 
-  return data.filter((item) => item.status === targetValue );
+export const getStatus = (data, target) => {
+  return data.filter((item) => item.status === target );
   
   } 
 
-export const getGender = (data, targetValue) => {
-
-  return data.filter((item) => item.gender === targetValue );
+export const getGender = (data, target) => {
+  return data.filter((item) => item.gender === target );
     
   } 
