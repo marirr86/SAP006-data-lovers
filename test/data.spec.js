@@ -14,8 +14,8 @@ const charsAZ = [
 
 const charsZA = [
   {"name": "Phillip Jacobs", "status": "Alive", "species": "Human", "gender": "Male"},
-  {"name": "General Nathan", "status": "Dead", "species": "Human", "gender": "Male"},
-  {"name": "Glenn", "status": "Dead", "species": "Alien" ,"gender": "Male"},
+  {"name": "Glenn", "status": "Dead", "species": "Alien", "gender": "Male"},
+  {"name": "General Nathan", "status": "Dead", "species": "Human" ,"gender": "Male"},
   {"name": "Birdperson","status": "Dead", "species": "Alien", "gender": "Male"}];
 
 describe('testing "ordering" function', () => {
@@ -24,11 +24,11 @@ describe('testing "ordering" function', () => {
   });
 
   it('test if it is ordered from `A-Z`', () => {
-    expect(ordering(chars, "A-Z")).toEqual('charsAZ');
+    expect(ordering(chars, "A-Z")).toEqual(charsAZ);
   });
 
   it('test if it is ordered from `Z-A`', () => {
-    expect(ordering(chars, "Z-A")).toEqual('charsZA');
+    expect(ordering(chars, "z-a")).toEqual(charsZA);
   });
 });
 
